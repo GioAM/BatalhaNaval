@@ -12,7 +12,8 @@ package batalhanaval;
 public class Jogador{
    private String nome;
    private boolean acertou;
-
+   int id; 
+   
     public boolean isAcertou() {
         return acertou;
     }
