@@ -44,4 +44,147 @@ public class Navio {
         tabela[i1][j1].setEmbaixo('X'); 
         tabela[i2][j2].setEmbaixo('X');  
     }
+    
+    public int[] adicionarNavio3X1(Quadrado[][] tabela){
+        int navio = 0;
+        int i1 = 0;
+        int j1 = 0;
+        int i2 = 0;
+        int j2 = 0;
+        int j3 = 0;
+        int i3 = 0;
+       
+        int[] navio3x1 = new int[6];
+        while(navio != 3){
+            
+            navio = 0;
+            
+            i1 = (int) (Math.random() * 7);
+            j1 = (int) (Math.random() * 7);
+
+            i2 = (int) (Math.random() * 7);
+            j2 = (int) (Math.random() * 7);
+
+            if(i2 == i1){
+                if(j2 == j1 - 1 || j2 == j1 + 1 ){
+                    if(j1 == 0){
+                        i3 = i2;
+                        j3 = j2 + 1;
+                        navio ++;
+                    }else if(j2 == 0){
+                        i3 = i2;
+                        j3 = j1 + 1;
+                        navio ++;
+                    } else{
+                         if(j2 > j1  && j2 < 6){
+                            i3 = i2;
+                            j3 = j2 + 1;
+                            navio ++;
+                        }else if(j2 < j1 ){
+                            i3 = i2;
+                            j3 = j2 - 1;
+                            navio ++;
+                        }
+                    }
+                }
+                    
+           }else if(j2 == j1){
+                if(i2 == i1 - 1 || i2 == i1 + 1){
+                    if(i2 == 0){
+                        j3 = j2;
+                        i3 = i1 + 1;
+                        navio ++;
+                    }else if(i1 == 0){
+                        j3 = j2;
+                        i3 = i2 + 1;
+                       navio ++;
+                    } else{
+                        if(i2 > i1 && i2 < 6){
+                            j3 = j2;
+                            i3 = i2 + 1;
+                            navio ++;
+                        }else if(i2 < i1){
+                            j3 = j2;
+                            i3 = i2 - 1;
+                            navio ++;
+                        }
+                    }
+                }
+            }else if(i2 == i1-1 && j2 == j1-1){
+                if(i2 == 0 || j2 == 0){
+                    i3 = i1 + 1;
+                    j3 = j1 + 1;
+                    navio++;
+                }else{
+                    i3 = i2 - 1;
+                    j3 = j2 - 1;
+                    navio ++;
+                }
+            }else if(i2 == i1 - 1 && j2 == j1 + 1){
+                if(i2 == 6 || j2 == 0){
+                    i3 = i1 + 1;
+                    j3 = j1 - 1;
+                    navio ++;
+                }else{
+                    i3 = i2 - 1;
+                    j3 = j2 + 1;
+                    navio ++;
+                }
+            }else if(i2 == i1 + 1 && j2 == j1 - 1){
+                if(i2 == 6 || j2 == 0){
+                    i3 = i1 - 1;
+                    j3 = j1 + 1;
+                    navio ++;
+                }else{
+                    i3 = i2 + 1;
+                    j3 = j2 - 1;
+                    navio ++;
+                }
+            }else if(i2 == i1 + 1 && j2 == j1 + 1){
+                if(j2 == 6 || i2 == 6){
+                    i3 = i1 - 1;
+                    j3 = j1 - 1;
+                    navio ++;
+                }else{
+                    i3 = i2 + 1;
+                    j3 = j2 + 1;
+                    navio ++;
+                }
+                
+            }
+           
+                    
+             if(i3 > 6 || i3 < 0 ||j3 > 6 || j3 < 0){
+                 navio = 0;
+             }else{
+                 navio ++;
+             }
+            if(navio == 2){
+                if(tabela[i1][j1].getEmbaixo() != 'X' && tabela[i2][j2].getEmbaixo() != 'X' && tabela[i3][j3].getEmbaixo() != 'X' ){
+                    navio ++;
+                }else{
+                    navio = 0;
+                }
+            }
+        }
+        
+            System.out.println("i1 " + i1);
+                    System.out.println("j1 " + j1);
+                System.out.println("i2 " + i2);
+                    System.out.println("j2 " + j2);
+                 System.out.println("i3 " + i3);
+                    System.out.println("j3 " + j3);
+        tabela[i1][j1].setEmbaixo('X'); 
+        tabela[i2][j2].setEmbaixo('X');  
+        tabela[i3][j3].setEmbaixo('X');
+        
+        navio3x1[0] = i1;
+        navio3x1[1] = j1;
+        navio3x1[2] = i2;
+        navio3x1[3] = j2;
+        navio3x1[4] = i3;
+        navio3x1[5] = j3;
+        
+        return navio3x1;
+    }
 }
