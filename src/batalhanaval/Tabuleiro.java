@@ -8,6 +8,7 @@ public class Tabuleiro {
     
     Quadrado[][] tabuleiro;
     Navio navio = new Navio();
+    private int[] navio3x1;
     
     public Tabuleiro(){
         tabuleiro = new Quadrado[7][7];
@@ -16,9 +17,17 @@ public class Tabuleiro {
                tabuleiro[i][j] = new Quadrado();
            }
        }
-       navio.adicionarNavio2X1(tabuleiro);
-       navio.adicionarNavio2X1(tabuleiro);
-       navio.adicionarNavio2X1(tabuleiro);
+        
+        navio3x1 = navio.adicionarNavio3X1(tabuleiro);
+       
+    }
+
+    public int[] getNavio3x1() {
+        return navio3x1;
+    }
+
+    public void setNavio3x1(int[] navio3x1) {
+        this.navio3x1 = navio3x1;
     }
     public void mostrarTabuleiro(){
         for(int i = 0; i < 7; i++){
