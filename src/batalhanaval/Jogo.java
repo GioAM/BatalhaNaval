@@ -5,6 +5,9 @@
  */
 package batalhanaval;
 
+import java.io.PrintStream;
+import java.util.Scanner;
+
 /**
  *
  * @author giovani.meneguel
@@ -24,16 +27,21 @@ public class Jogo {
         
         tabuleiro2 = tabuleiro1;
     }
-    
+   
     public void jogar(){
-        System.out.println("Tabuleiro 1");
-        tabuleiro1.mostrarTabuleiro();
-         System.out.println("Tabuleiro 2");
-        tabuleiro2.mostrarTabuleiro();
-         System.out.println("Tabuleiro 1");
-        tabuleiro1.revelarTabuleiro();
-         System.out.println("Tabuleiro 2");
-        tabuleiro2.revelarTabuleiro();
+        for(int i2 = 0; i2 < 10; i2++){
+            int i;
+            int j;
+
+            Scanner scanner = new Scanner(System.in);
+            i = scanner.nextInt();
+            j = scanner.nextInt();
+            System.out.println(jogador1.jogada(tabuleiro1.getQuadrado(i, j)));
+            System.out.println("Tabuleiro 1");
+            tabuleiro1.mostrarTabuleiro();
+        }
+
+       
     }
     
 }

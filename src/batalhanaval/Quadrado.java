@@ -28,6 +28,7 @@ public class Quadrado{
             System.out.print(getAgua() + " ");
         }
     }
+    
     public char getAgua() {
         return agua;
     }
