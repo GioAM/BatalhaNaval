@@ -9,6 +9,7 @@ public class Tabuleiro {
     Quadrado[][] tabuleiro;
     Navio navio = new Navio();
     private int[] navio3x1;
+    private int[] navio2x1;
     
     public Tabuleiro(){
         tabuleiro = new Quadrado[7][7];
@@ -19,7 +20,22 @@ public class Tabuleiro {
        }
         
         navio3x1 = navio.adicionarNavio3X1(tabuleiro);
+        navio.adicionarNavio2X1(tabuleiro);
+        navio.adicionarNavio2X1(tabuleiro);
+        navio.adicionarNavio2X1(tabuleiro);
+        navio.adicionarNavio2X1(tabuleiro);
+        navio.adicionarNavio2X1(tabuleiro);
        
+    }
+   
+    public Quadrado getQuadrado(int i, int j){
+        try{
+            tabuleiro[i][j].setFoiAcertado(true);
+            return tabuleiro[i][j];
+        }catch(Exception e){
+            System.out.println("SEU BURRO O TABULEIRO É 7 X 7");
+        }
+        return null;
     }
 
     public int[] getNavio3x1() {

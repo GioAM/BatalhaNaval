@@ -12,6 +12,22 @@ package batalhanaval;
 public class Jogador{
    private String nome;
    private boolean acertou;
+
+    public String jogada(Quadrado quadrado){
+   
+    String acertouQuadrado;
+    try{
+    if(quadrado.getEmbaixo() == 'X'){
+        acertouQuadrado = "Parabéns! Você acertou.";
+    }else{
+        acertouQuadrado = "Não foi dessa vez. Tente Novamente";
+    }
+    
+    return acertouQuadrado;
+    }catch(NullPointerException e){
+     return " ";   
+    }
+}   
    
     public boolean isAcertou() {
         return acertou;
