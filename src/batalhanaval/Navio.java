@@ -10,7 +10,9 @@ package batalhanaval;
  * @author giovani.meneguel
  */
 public class Navio {
-    public void adicionarNavio2X1(Quadrado[][] tabela){
+    
+    public static int[] adicionarNavio2X1(Quadrado[][] tabela){
+        int[] navio2X1 = new int[4];
         int navio = 0;
         int i1 = 0;
         int j1 = 0;
@@ -43,9 +45,15 @@ public class Navio {
         }
         tabela[i1][j1].setEmbaixo('X'); 
         tabela[i2][j2].setEmbaixo('X');  
+        navio2X1[0] = i1;
+        navio2X1[1] = j1;
+        navio2X1[2] = i2;
+        navio2X1[3] = j2;
+        
+        return navio2X1;
     }
     
-    public int[] adicionarNavio3X1(Quadrado[][] tabela){
+    public static int[] adicionarNavio3X1(Quadrado[][] tabela){
         int navio = 0;
         int i1 = 0;
         int j1 = 0;
@@ -167,13 +175,7 @@ public class Navio {
                 }
             }
         }
-        
-            System.out.println("i1 " + i1);
-                    System.out.println("j1 " + j1);
-                System.out.println("i2 " + i2);
-                    System.out.println("j2 " + j2);
-                 System.out.println("i3 " + i3);
-                    System.out.println("j3 " + j3);
+
         tabela[i1][j1].setEmbaixo('X'); 
         tabela[i2][j2].setEmbaixo('X');  
         tabela[i3][j3].setEmbaixo('X');
