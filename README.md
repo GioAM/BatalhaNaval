@@ -1,3 +1,3 @@
-# batalha-naval
+# Batalha Naval
 
-Trabalho de Batalha Naval realizado para a matéria de Linguagem de programação
+Implementação de um jogo de Batalha Naval realizado para a matéria de Linguagem de programação
